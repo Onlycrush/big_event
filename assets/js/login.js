@@ -1,4 +1,5 @@
 $(function () {
+
     // 登录注册页面切换
     $('#link_login').click(function () {
         $('.reg-box').hide()
