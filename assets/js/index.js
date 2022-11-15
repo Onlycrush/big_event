@@ -1,6 +1,22 @@
+$(function () {
+    var layer = layui.layer;
+    getUserInfo()
 
-var layer = layui.layer;
-// 1.获取用户基本信息
+    // .退出登录
+    $('#logOut').click(function () {
+        layer.confirm('确认退出登录吗?', { icon: 3, title: '提示' }, function (index) {
+            // 确认退出
+            // 1.删除当前用户的token
+            localStorage.removeItem('token')
+            // 2.跳转到登录页
+            location.href = '/12.1-大事件项目/login.html'
+            // 点击取消关闭询问框
+            layer.close(index);
+        });
+    })
+})
+
+// .获取用户基本信息
 function getUserInfo() {
     $.ajax({
         method: 'GET',
@@ -24,7 +40,6 @@ function getUserInfo() {
         // }
     })
 }
-getUserInfo()
 // 渲染头像函数
 function renderAvatar(user) {
     // 用户名称
@@ -45,15 +60,4 @@ function renderAvatar(user) {
     }
 }
 
-// 2.退出登录
-$('#logOut').click(function () {
-    layer.confirm('确认退出登录吗?', { icon: 3, title: '提示' }, function (index) {
-        // 确认退出
-        // 1.删除当前用户的token
-        localStorage.removeItem('token')
-        // 2.跳转到登录页
-        location.href = '/12.1-大事件项目/login.html'
-        // 点击取消关闭询问框
-        layer.close(index);
-    });
-})
+
