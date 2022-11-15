@@ -16,7 +16,7 @@ $.ajaxPrefilter(function (options) {
             // 1.强制清空token
             localStorage.removeItem('token')
             // 2.强制跳转到登录页
-            location.href = '/12.1-大事件项目/login.html'
+            location.href = '/login.html'
         }
     }
 })

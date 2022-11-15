@@ -58,7 +58,7 @@ $(function () {
                 localStorage.setItem('token', res.token)
                 console.log(res.token);
                 // 成功则跳转到首页
-                location.href = '/12.1-大事件项目/index.html'
+                location.href = '/index.html'
             }
         })
     })
