@@ -43,8 +43,7 @@ $(function () {
                     return layer.msg('用户信息更新失败!')
                 }
                 layer.msg('用户信息更新成功')
-                // window.parent.getUserInfo()
-                window.parent.location.reload()
+                window.parent.getUserInfo()
             }
         })
     })
